@@ -182,14 +182,14 @@ public class MagicTimer {
                 }
                 
                 self.counter.totalCountedValue = fromSeconds
-                guard counter.totalCountedValue.isBiggerThan(.zero) else {
-                    executive.suspand {
+                guard self.counter.totalCountedValue.isBiggerThan(.zero) else {
+                    self.executive.suspand {
                         self.lastState = .stopped
                     }
                     return
                 }
-                counter.subtract()
-                elapsedTime = self.counter.totalCountedValue
+                self.counter.subtract()
+                self.elapsedTime = self.counter.totalCountedValue
             }
         }
     }
